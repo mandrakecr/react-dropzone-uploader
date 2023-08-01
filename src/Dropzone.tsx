@@ -500,7 +500,7 @@ class Dropzone extends React.Component<IDropzoneProps, { active: boolean; dragge
     let params: IUploadParams | null = null
     try {
       params = await getUploadParams(fileWithMeta)
-    } catch (e) {
+    } catch (e: any) {
       console.error('Error Upload Params', e.stack)
     }
     if (params === null) return
@@ -630,7 +630,7 @@ class Dropzone extends React.Component<IDropzoneProps, { active: boolean; dragge
     const SubmitButton = SubmitButtonComponent || SubmitButtonDefault
     const Layout = LayoutComponent || LayoutDefault
 
-    let previews = null
+    let previews: any = null
     if (PreviewComponent !== null) {
       previews = files.map(f => {
         return (
